@@ -1,0 +1,113 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    background: radial-gradient(#e66465, #9198e5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+.battery{
+    z-index: 1;
+    width:200px;
+    height: 50px;
+    padding:5px;
+    border-radius: 10px;
+    left: 50%;
+    top:10px;
+    margin-left: -100px;
+    position: fixed;
+    border: 6px solid black;
+    background-color: whitesmoke;
+}
+
+.battery::after{
+    content:"";
+    display: block;
+    left: 100%;
+    top:5px;
+	background: transparent;
+	border: 6px solid black;
+	width: 6px;
+	height: 16px;
+	position: absolute;
+	border-radius: 2px;
+}
+
+.inner_battery{
+    z-index: 99;
+    border-radius: 5px;
+    background-color: limegreen;
+    width: 0%;
+    height: 100%;
+}
+
+.all_container{
+    position: relative;
+    border-radius: 50%;
+}
+
+.aura{
+    z-index: 1;
+    top:0;
+    left:0;
+    position: absolute;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    animation: aura 3s linear;
+}
+
+@keyframes aura{
+    0%{
+        transform: scale(0.5);
+        opacity: 0.1;
+        background-color: blue;
+    }
+    60%{
+        transform: scale(3);
+        opacity: 0.1;
+        background-color: lightblue;
+    }
+    100%{
+        background-color: none;
+        opacity: 0;
+    }
+}
+
+.image_container{
+    position: relative;
+    z-index: 10;
+    animation: floating 2s ease-in-out infinite;
+    width: 500px;
+    height: 600px;
+}
+
+@keyframes floating{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+img{
+    z-index: 1000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
