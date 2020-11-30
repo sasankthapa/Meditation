@@ -30,7 +30,7 @@ function addAuraNonStop(){
     addAura();
     increaseBattery()
     setTimeout(()=>{
-        if(hold && this.clickNum==clickNum){
+        if(hold){
             addAuraNonStop()
             if(delay>=1000)
                 delay-=200;
